@@ -36,7 +36,10 @@ export default function AskPanel() {
     <div className="panel ask-panel">
       <div className="chat">
         {history.length === 0 && (
-          <p className="hint">Ask a question grounded in the ingested documents.</p>
+          <p className="hint">
+            On a call with a tough question? Ask the knowledge base for a grounded
+            answer to relay to the caller.
+          </p>
         )}
         {history.map((en, i) => (
           <div key={i} className="exchange">
@@ -64,7 +67,7 @@ export default function AskPanel() {
       <form className="composer" onSubmit={submit}>
         <input
           type="text"
-          placeholder="Ask the knowledge base…"
+          placeholder="What is the caller asking about?"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
